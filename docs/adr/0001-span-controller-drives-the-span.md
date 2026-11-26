@@ -1,0 +1,3 @@
+# The span controller drives the span
+
+The span controller alone commands the span motor and reads the span's position sensors. The road controller has the road light, the barriers and the span's car sensor. The river controller has the approach sensor, the boat signal and the channel sensor. We rejected the airlock's pure-lock coordinator, where the river controller would move the span once granted. That design contradicts the brief's split (river controller: "boat signals" only; the span is "owned by one component, the coordinator"). It would also spread "the span moves only while the road is closed" across two state machines, and leave the river controller with most of the states. Its one advantage was that more airlock code could be copied.
