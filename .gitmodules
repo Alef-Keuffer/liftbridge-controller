@@ -1,0 +1,3 @@
+[submodule "reference/airlock"]
+	path = reference/airlock
+	url = https://github.com/joaopascoalfariafeup/airlock
