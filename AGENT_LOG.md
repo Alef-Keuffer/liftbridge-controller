@@ -23,8 +23,16 @@ The ticket draft sliced the spec by document section, kept the S1 expected log i
 
 ## Corrected and rejected, by student
 
-The brief asks for at least two per student. Add one heading per member.
+The brief asks for at least two per student.
 
 ### Alef Keuffer
 
 - 2026-11-26, corrected: [ticket slicing](agent-log/2026-11-26-1152Z-tickets-created.md)
+
+### Luís Arruda
+
+None yet.
+
+### Diogo Ferreira
+
+None yet.

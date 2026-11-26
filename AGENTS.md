@@ -20,7 +20,7 @@ The teachers' worked example is at `reference/airlock` (a submodule pinned at `5
 
 ## Architecture, in any language
 
-- One component per active object (road controller, river controller, span controller): its own thread, and one bounded, blocking inbox, read with a timeout, that receives the messages of all its senders. A decision function only decides (no I/O, threads or clock); the thread does what was decided.
+- One component per active object (road controller, river controller, span controller): its own thread, and one bounded, blocking inbox, read with a timeout so that the thread can fire its timers and see the stop flag, that receives the messages of all its senders. A decision function only decides (no I/O, threads or clock); the thread does what was decided.
 - The span controller owns the span. The road holds it at rest; the span controller takes it back with `Revoke`, and the lock messages are `Request`, `Granted`, `Release` and `Revoke` (ADR-0001, ADR-0002).
 - One function starts the system, the fake hardware included: it creates the queues, starts the threads, and is given the times and the fake hardware's settings. Components get their queues there, never from each other. It knows nothing of the scenario.
 - The controller uses only the real clock. Running faster than real time is the test driver's job: it gives shorter times, speeds up the environment the same way, and converts the log back.
