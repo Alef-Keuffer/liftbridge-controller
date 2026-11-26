@@ -8,7 +8,7 @@ Copy this template. The last three fields are optional: fill them when the agent
 # <What came out of the session>
 
 - **Who:** the student who ran the session, and the role (oracles, controller, test driver)
-- **Tools:** tool and model, and the skill used, if any
+- **Tools:** tool and model, and each skill used by its full name, with its source (`mattpocock-skills:implement`, not `implement`)
 - **Goal:** the task, with its issue number
 - **Context given:** the files, issues and decisions the agent was given
 - **Prompt (summary):** what was asked, in a sentence or two

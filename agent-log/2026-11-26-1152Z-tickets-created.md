@@ -1,7 +1,7 @@
 # Slice the decisions into tickets
 
 - **Who:** Alef Keuffer, before roles were assigned
-- **Tools:** Claude Code (Claude Opus 5.5), skill `to-tickets`
+- **Tools:** Claude Code (Claude Opus 5.5), skill `mattpocock-skills:to-tickets`
 - **Goal:** Turn the grilling record into GitHub issues that agents can pick up one at a time.
 - **Context given:** the grilling record, the glossary, ADRs 0001–0005, the assignment brief.
 - **Prompt (summary):** `/to-tickets` on the grilling record.
