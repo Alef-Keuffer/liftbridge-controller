@@ -1,5 +1,7 @@
 # AGENTS.md
 
+ the specification as reference, the architecture, the conventions, test-first work, and what is forbidden: unbounded queues, state shared between components other than the log and the run context (clock, stop flag), libraries without approval, and risky constructs (unwrap() in Rust, a bare except: in Python, …).
+
 ## Agent skills
 
 ### Issue tracker

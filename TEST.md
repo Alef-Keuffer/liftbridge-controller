@@ -1,0 +1,2 @@
+# TEST.md
+Test plan with the criteria that show the tests are good enough (Section 6); the scenarios (S1, S2, …), in the order you will implement them, each with what happens, its inputs, its expected log and the transitions it adds; and how the tests are built.
