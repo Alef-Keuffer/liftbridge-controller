@@ -20,14 +20,14 @@ The teachers' worked example is at `reference/airlock` (a submodule pinned at `5
 
 ## Architecture, in any language
 
-- One component per active object (road controller, river controller, span controller): its own thread, and one bounded, blocking inbox that receives the messages of all its senders. A decision function only decides (no I/O, threads or clock); the thread does what was decided.
+- One component per active object (road controller, river controller, span controller): its own thread, and one bounded, blocking inbox, read with a timeout, that receives the messages of all its senders. A decision function only decides (no I/O, threads or clock); the thread does what was decided.
 - The span controller owns the span. The road holds it at rest; the span controller takes it back with `Revoke`, and the lock messages are `Request`, `Granted`, `Release` and `Revoke` (ADR-0001, ADR-0002).
 - One function starts the system, the fake hardware included: it creates the queues, starts the threads, and is given the times and the fake hardware's settings. Components get their queues there, never from each other. It knows nothing of the scenario.
 - The controller uses only the real clock. Running faster than real time is the test driver's job: it gives shorter times, speeds up the environment the same way, and converts the log back.
 - The environment (cars and boats, played by the test driver) talks only to the fake hardware. Neither decides for the controller.
 - Only the queues and the run context (the clock, the event log and the stop flag) are shared. Every message is logged, in the exact format SPEC.md fixes for the expected logs.
 - `scenarios/`: scenario files and expected logs (`*.expected.txt`), read by every implementation. One test runs every file there.
-- The expected logs are written by the oracle owner. Propose changes, but do not edit them unless asked.
+- The expected logs come from oracle sessions, approved by the oracles' owner. Other sessions propose changes, but do not edit them unless asked.
 
 ## Conventions
 
@@ -39,11 +39,11 @@ The teachers' worked example is at `reference/airlock` (a submodule pinned at `5
 - Every actual log is also checked whole against the safety properties, by the shared Python checker and by each implementation's own check; the two must agree (ADR-0005).
 - Tests on threads keep wide margins: no scenario may depend on the order of two events less than half a second apart; where events happen together, the expected log lists every order allowed.
 - Traceability: every item in SPEC.md and TEST.md has an id (J journeys, A and E flows, P properties, T transitions, D decisions, S scenarios). Code that provides one carries `Implements: P1`, and a test that checks one carries `Verifies: P1`, in the language's comment syntax. Say which ids each change serves.
-- Use the glossary's terms in code, logs and docs, and none of the words it says to avoid.
+- Name domain concepts with the glossary's terms in code, logs and docs, and none of the words it says to avoid.
 
 ## Forbidden, in any language
 
-- state shared between components other than the log and the run context (clock, stop flag): send a message instead
+- state shared between components other than the run context (clock, event log, stop flag): send a message instead
 - unbounded queues
 - sleeping or reading the clock in a decision function
 - any library beyond the standard one and the test framework, without the teachers' approval

@@ -17,7 +17,7 @@ No entries: the grilling session ran through both weeks and ended in week 3, whe
 | 11-12 → 11-26 | Alef Keuffer | Claude Code, Opus 5.5 | `grill-with-docs` | Initial decisions: glossary, ADRs 0001–0005, grilling record | accepted | [entry](agent-log/2026-11-26-1138Z-initial-decisions-recorded.md) |
 | 11-26 | Alef Keuffer | Claude Code, Opus 5.5 | `to-tickets` | Tickets #3–#12 from the grilling record | corrected | [entry](agent-log/2026-11-26-1152Z-tickets-created.md) |
 | 11-26 | Alef Keuffer | Claude Code, Opus 5.5 | `implement` | #3: install the airlock reference | accepted | [entry](agent-log/2026-11-26-1158Z-airlock-installed.md) |
-| 11-26 | Alef Keuffer | Claude Code, Opus 5.5 | `implement` | #4: AGENTS.md and this log | accepted | [entry](agent-log/2026-11-26-1230Z-agents-md-and-log.md) |
+| 11-26 | Alef Keuffer | Claude Code, Opus 5.5 | `implement` | #4: AGENTS.md and this log | accepted | [entry](agent-log/2026-11-26-1210Z-agents-md-and-log.md) |
 
 The ticket draft sliced the spec by document section, kept the S1 expected log inside a spec slice, and had a ticket for work already done; the human's review caught all three before the tickets were created.
 
